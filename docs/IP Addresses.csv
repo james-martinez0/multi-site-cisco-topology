@@ -1,0 +1,101 @@
+﻿,192.168.0.0/16,,,,,,,,,,
+,,Total Users,Allocated,Network,Mask,,,,,,
+,Philippines,1912,32768,192.168.0.0,/17,,,,,,
+,Asia Pacific Region (Reserved),,32768,192.168.128.0,/17,,,,,,
+,,,,,,,,,,,
+,192.168.0.0/17,,,,,,,,,,
+VLAN,Sites,Total Users,Allocated,Network,Mask,,,,,,
+11-19,Manila,810,1022,192.168.0.0,/22,,,,,,
+21-29,Cebu,385,510,192.168.4.0,/23,,,,,,
+31-39,Makati,415,254,192.168.6.0,/24,,,,,,
+41-49,Bohol,120,126,192.168.7.0,/25,,,,,,
+,,,,,,,,,,,
+,,,,,,,,,,,
+Users,,,,,,,,,,,
+VLAN,Subnet Name,Needed Size,Allocated,Network,Mask,Subnet Mask,Assignable Range,Souce Port 1,Destination Port 1,Souce Port 2,Destination Port 2
+11,Manila Site - Engineering,450,510,192.168.0.0,/23,255.255.254.0,192.168.0.1 - 192.168.1.254,Gig0/1,Gig1/0/5,Gig0/2,Gig1/0/5
+12,Manila Site - Sales and Marketing,220,254,192.168.2.0,/24,255.255.255.0,192.168.2.1 - 192.168.2.254,Gig0/1,Gig1/0/6,Gig0/2,Gig1/0/6
+13,Manila Site - Service Desk,45,62,192.168.3.0,/26,255.255.255.192,192.168.3.1 - 192.168.3.62,Gig0/1,Gig1/0/7,Gig0/2,Gig1/0/7
+14,Manila Site - Accounting,40,62,192.168.3.64,/26,255.255.255.192,192.168.3.65 - 192.168.3.126,Gig0/1,Gig1/0/8,Gig0/2,Gig1/0/8
+15,Manila Site - Travel and Expenses,30,30,192.168.3.128,/27,255.255.255.224,192.168.3.129 - 192.168.3.158,Gig0/1,Gig1/0/9,Gig0/2,Gig1/0/9
+16,Manila Site - HR,15,30,192.168.3.160,/27,255.255.255.224,192.168.3.161 - 192.168.3.190,Gig0/1,Gig1/0/10,Gig0/2,Gig1/0/10
+17,Manila Site - Project Management,10,14,192.168.3.192,/28,255.255.255.240,192.168.3.193 - 192.168.3.206,Gig0/1,Gig1/0/11,Gig0/2,Gig1/0/11
+,,,,,,,,,,,
+21,Cebu Site - Engineering,250,254,192.168.4.0,/24,255.255.255.0,192.168.4.1 - 192.168.4.254,Gig0/1,Gig1/0/5,Gig0/2,Gig1/0/5
+22,Cebu Site - Maintenance Team,100,126,192.168.5.0,/25,255.255.255.128,192.168.5.1 - 192.168.5.126,Gig0/1,Gig1/0/6,Gig0/2,Gig1/0/6
+23,Cebu Site - Accounting,20,30,192.168.5.128,/27,255.255.255.224,192.168.5.129 - 192.168.5.158,Gig0/1,Gig1/0/7,Gig0/2,Gig1/0/7
+24,Cebu Site - Project Management,15,30,192.168.5.160,/27,255.255.255.224,192.168.5.161 - 192.168.5.190,Gig0/1,Gig1/0/8,Gig0/2,Gig1/0/8
+,,,,,,,,,,,
+31,Makati Site - Engineering,200,254,192.168.6.0,/24,255.255.255.0,192.168.6.1 - 192.168.6.254,Gig0/1,Gig1/0/5,Gig0/2,Gig1/0/5
+32,Makati Site - Sales and Marketing,175,254,192.168.7.0,/24,255.255.255.0,192.168.7.1 - 192.168.7.254,Gig0/1,Gig1/0/6,Gig0/2,Gig1/0/6
+33,Makati Site - InfoSect Team,20,30,192.168.8.0,/27,255.255.255.224,192.168.8.1 - 192.168.8.30,Gig0/1,Gig1/0/7,Gig0/2,Gig1/0/7
+34,Makati Site - Project Management,20,30,192.168.8.32,/27,255.255.255.224,192.168.8.33 - 192.168.8.62,Gig0/1,Gig1/0/8,Gig0/2,Gig1/0/8
+,,,,,,,,,,,
+41,Bohol Site - Maintenance Team,100,126,192.168.7.0,/25,255.255.255.128,192.168.7.1 - 192.168.7.126,Gig0/1,Gig1/0/5,Gig0/2,Gig1/0/5
+42,Bohol Site - HR,20,30,192.168.7.128,/27,255.255.255.224,192.168.7.129 - 192.168.7.158,Gig0/1,Gig1/0/6,Gig0/2,Gig1/0/6
+,,,,,,,,,,,
+,172.17.0.0/24,,,,,,,,,,
+,,Total Users,Allocated,Network,Mask,,,,,,
+,Philippines,128,32768,172.17.0.0,/25,,,,,,
+,Asia Pacific Region (Reserved),128,32768,172.17.0.128,/25,,,,,,
+,,,,,,,,,,,
+172.17.0.0/25,,,,,,,,,,,
+Servers,,,,,,,,,,,
+VLAN,Subnet Name,Needed Size,Allocated,Network,Mask,Subnet Mask,Assignable Range,,,,
+10,Manila Site - Servers,4,14,172.17.0.0,/28,255.255.255.240,172.17.0.1 - 172.17.0.14,Gig0/1,Gig1/0/4,Gig0/2,Gig1/0/4
+20,Cebu Site - Servers,4,14,172.17.0.16,/28,255.255.255.240,172.17.0.17 - 172.17.0.30,Gig0/1,Gig1/0/4,Gig0/2,Gig1/0/4
+30,Makati Site - Servers,3,14,172.17.0.32,/28,255.255.255.240,172.17.0.33 - 172.17.0.46,Gig0/1,Gig1/0/4,Gig0/2,Gig1/0/4
+40,Bohol Site - Servers,3,14,172.17.0.48,/28,255.255.255.240,172.17.0.49 - 172.17.0.62,Gig0/1,Gig1/0/4,Gig0/2,Gig1/0/4
+,,,,,,,,,,,
+Links,,,,,,,,,,,
+VLAN,Subnet Name,Needed Size,Allocated,Network,Mask,Subnet Mask,Assignable Range,,,,
+default,Virtual Interface Distribution 1,8,14,172.17.100.0,/28,255.255.255.240,172.17.100.1 - 172.17.100.14,,,,
+default,Virtual Interface Distribution 2,8,14,172.17.100.16,/28,255.255.255.240,172.17.100.17 - 172.17.100.30,,,,
+default,Manila Core 1 to Manila Distribution 1 ,2,2,172.17.100.32,/30,255.255.255.252,172.17.100.33 - 172.17.100.34,,,,
+default,Manila Core 1 to Manila Distribution 2 ,2,2,172.17.100.36,/30,255.255.255.252,172.17.100.37 - 172.17.100.38,,,,
+default,Manila Core 2 to Manila Distribution 1 ,2,2,172.17.100.40,/30,255.255.255.252,172.17.100.41 - 172.17.100.42,,,,
+default,Manila Core 2 to Manila Distribution 2 ,2,2,172.17.100.44,/30,255.255.255.252,172.17.100.45 - 172.17.100.46,,,,
+default,Manila Router to Manila Core 1,2,2,172.17.100.48,/30,255.255.255.252,172.17.100.49 - 172.17.100.50,,,,
+default,Manila Router to Manila Core 2,2,2,172.17.100.52,/30,255.255.255.252,172.17.100.53 - 172.17.100.54,,,,
+default,Manila Core 1 to Manila Core 2,2,2,172.17.100.56,/30,255.255.255.252,172.17.100.57 - 172.17.100.58,,,,
+,,,,,,,,,,,
+default,Virtual Interface Distribution 1,8,14,172.17.200.0,/28,255.255.255.240,172.17.200.1 - 172.17.200.14,,,,
+default,Virtual Interface Distribution 2,8,14,172.17.200.16,/28,255.255.255.240,172.17.200.17 - 172.17.200.30,,,,
+default,Cebu Core 1 to Cebu Distribution 1 ,2,2,172.17.200.32,/30,255.255.255.252,172.17.200.33 - 172.17.200.34,,,,
+default,Cebu Core 1 to Cebu Distribution 2 ,2,2,172.17.200.36,/30,255.255.255.252,172.17.200.37 - 172.17.200.38,,,,
+default,Cebu Core 2 to Cebu Distribution 1 ,2,2,172.17.200.40,/30,255.255.255.252,172.17.200.41 - 172.17.200.42,,,,
+default,Cebu Core 2 to Cebu Distribution 2 ,2,2,172.17.200.44,/30,255.255.255.252,172.17.200.45 - 172.17.200.46,,,,
+defacult,Cebu Router to Cebu Core 1,2,2,172.17.200.48,/30,255.255.255.252,172.17.200.49 - 172.17.200.50,,,,
+default,Cebu Router to Cebu Core 2,2,2,172.17.200.51,/30,255.255.255.252,172.17.200.52 - 172.17.200.54,,,,
+default,Cebu Core 1 to Cebu Core 2,2,2,172.17.200.56,/30,255.255.255.252,172.17.200.57 - 172.17.200.58,,,,
+,,,,,,,,,,,
+default,Virtual Interface Distribution 1,8,14,172.17.300.0,/28,255.255.255.240,172.17.300.1 - 172.17.300.14,,,,
+default,Virtual Interface Distribution 2,8,14,172.17.300.16,/28,255.255.255.240,172.17.300.17 - 172.17.300.30,,,,
+default,Makati Core 1 to Makati Distribution 1 ,2,2,172.17.300.32,/30,255.255.255.252,172.17.300.33 - 172.17.300.34,,,,
+default,Makati Core 1 to Makati Distribution 2 ,2,2,172.17.300.36,/30,255.255.255.252,172.17.300.37 - 172.17.300.38,,,,
+default,Makati Core 2 to Makati Distribution 1 ,2,2,172.17.300.40,/30,255.255.255.252,172.17.300.41 - 172.17.300.42,,,,
+default,Makati Core 2 to Makati Distribution 2 ,2,2,172.17.300.44,/30,255.255.255.252,172.17.300.45 - 172.17.300.46,,,,
+defacult,Makati Router to Makati Core 1,2,2,172.17.300.48,/30,255.255.255.252,172.17.300.49 - 172.17.300.50,,,,
+default,Makati Router to Makati Core 2,2,2,172.17.300.51,/30,255.255.255.252,172.17.300.52 - 172.17.300.54,,,,
+default,Makati Core 1 to Makati Core 2,2,2,172.17.300.56,/30,255.255.255.252,172.17.300.57 - 172.17.300.58,,,,
+,,,,,,,,,,,
+default,Virtual Interface Distribution 1,8,14,172.17.400.0,/28,255.255.255.240,172.17.400.1 - 172.17.400.14,,,,
+default,Virtual Interface Distribution 2,8,14,172.17.400.16,/28,255.255.255.240,172.17.400.17 - 172.17.400.30,,,,
+default,Bohol Core 1 to Bohol Distribution 1 ,2,2,172.17.400.32,/30,255.255.255.252,172.17.400.33 - 172.17.400.34,,,,
+default,Bohol Core 1 to Bohol Distribution 2 ,2,2,172.17.400.36,/30,255.255.255.252,172.17.400.37 - 172.17.400.38,,,,
+default,Bohol Core 2 to Bohol Distribution 1 ,2,2,172.17.400.40,/30,255.255.255.252,172.17.400.41 - 172.17.400.42,,,,
+default,Bohol Core 2 to Bohol Distribution 2 ,2,2,172.17.400.44,/30,255.255.255.252,172.17.400.45 - 172.17.400.46,,,,
+defacult,Bohol Router to Bohol Core 1,2,2,172.17.400.48,/30,255.255.255.252,172.17.400.49 - 172.17.400.50,,,,
+default,Bohol Router to Bohol Core 2,2,2,172.17.400.51,/30,255.255.255.252,172.17.400.52 - 172.17.400.54,,,,
+default,Bohol Core 1 to Bohol Core 2,2,2,172.17.400.56,/30,255.255.255.252,172.17.100.57 - 172.17.400.58,,,,
+,,,,,,,,,,,
+,62.62.62.0/24,,,,,,,,,,
+,,Total Users,Allocated,Network,Mask,,,,,,
+,Philippines,128,32768,62.62.62.0,/25,,,,,,
+,Asia Pacific Region (Reserved),128,32768,62.62.62.128,/25,,,,,,
+,,,,,,,,,,,
+,,,,,,,,,,,
+,Manila Site - Router,30,30,62.62.62.0,/27,255.255.255.224,62.62.62.1 - 62.62.62.30,,,,
+,Cebu Site - Router,30,30,62.62.62.32,/27,255.255.255.224,62.62.62.33 - 62.62.62.62,,,,
+,Makati Site - Router,30,30,62.62.62.64,/27,255.255.255.224,62.62.62.65 - 62.62.62.94,,,,
+,Bohol Site - Router,30,30,62.62.62.96,/27,255.255.255.224,62.62.62.97 - 62.62.62.126,,,,

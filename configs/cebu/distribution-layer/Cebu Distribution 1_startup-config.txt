@@ -1,0 +1,188 @@
+!
+version 16.3.2
+no service timestamps log datetime msec
+no service timestamps debug datetime msec
+service password-encryption
+!
+hostname CEB_DIST1
+!
+!
+enable secret 5 $1$mERr$TVaOygN69UQtZWlSTZ9Nw/
+enable password 7 08021F4C1C4B5545464F48
+!
+!
+!
+!
+!
+!
+no ip cef
+ip routing
+!
+no ipv6 cef
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+no ip domain-lookup
+!
+!
+spanning-tree mode pvst
+!
+!
+!
+!
+!
+!
+interface Port-channel1
+ no switchport
+ ip address 172.17.200.33 255.255.255.252
+!
+interface GigabitEthernet1/0/1
+ no switchport
+ no ip address
+ channel-group 1 mode desirable
+ duplex auto
+ speed auto
+!
+interface GigabitEthernet1/0/2
+ no switchport
+ no ip address
+ channel-group 1 mode desirable
+ duplex auto
+ speed auto
+!
+interface GigabitEthernet1/0/3
+ no switchport
+ ip address 172.17.200.41 255.255.255.252
+ duplex auto
+ speed auto
+!
+interface GigabitEthernet1/0/4
+!
+interface GigabitEthernet1/0/5
+!
+interface GigabitEthernet1/0/6
+!
+interface GigabitEthernet1/0/7
+!
+interface GigabitEthernet1/0/8
+!
+interface GigabitEthernet1/0/9
+!
+interface GigabitEthernet1/0/10
+!
+interface GigabitEthernet1/0/11
+!
+interface GigabitEthernet1/0/12
+!
+interface GigabitEthernet1/0/13
+!
+interface GigabitEthernet1/0/14
+!
+interface GigabitEthernet1/0/15
+!
+interface GigabitEthernet1/0/16
+!
+interface GigabitEthernet1/0/17
+!
+interface GigabitEthernet1/0/18
+!
+interface GigabitEthernet1/0/19
+!
+interface GigabitEthernet1/0/20
+!
+interface GigabitEthernet1/0/21
+!
+interface GigabitEthernet1/0/22
+!
+interface GigabitEthernet1/0/23
+!
+interface GigabitEthernet1/0/24
+!
+interface GigabitEthernet1/1/1
+!
+interface GigabitEthernet1/1/2
+!
+interface GigabitEthernet1/1/3
+!
+interface GigabitEthernet1/1/4
+!
+interface Vlan1
+ no ip address
+ shutdown
+!
+interface Vlan20
+ mac-address 0004.9a55.d801
+ ip address 172.17.0.30 255.255.255.240
+ standby 10 ip 172.17.0.17
+ standby 10 priority 95
+ standby 10 preempt
+!
+interface Vlan21
+ mac-address 0004.9a55.d802
+ ip address 192.168.4.254 255.255.255.0
+ ip helper-address 172.17.0.18
+ standby 21 ip 192.168.4.1
+ standby 21 priority 105
+ standby 21 preempt
+!
+interface Vlan22
+ mac-address 0004.9a55.d803
+ ip address 192.168.5.126 255.255.255.128
+ ip helper-address 172.17.0.18
+ standby 22 ip 192.168.5.1
+ standby 22 priority 105
+ standby 22 preempt
+!
+interface Vlan23
+ mac-address 0004.9a55.d804
+ ip address 192.168.5.158 255.255.255.224
+ ip helper-address 172.17.0.18
+ standby 23 ip 192.168.5.129
+ standby 23 priority 105
+ standby 23 preempt
+!
+interface Vlan24
+ mac-address 0004.9a55.d805
+ ip address 192.168.5.190 255.255.255.224
+ ip helper-address 172.17.0.18
+ standby 24 ip 192.168.5.161
+ standby 24 priority 105
+ standby 24 preempt
+!
+router ospf 1
+ log-adjacency-changes
+ network 172.17.0.0 0.0.255.255 area 0
+ network 192.168.0.0 0.0.255.255 area 0
+ network 62.62.0.0 0.0.255.255 area 0
+!
+ip classless
+!
+ip flow-export version 9
+!
+!
+!
+!
+!
+!
+!
+line con 0
+!
+line aux 0
+!
+line vty 0 4
+ login
+!
+!
+!
+!
+end
+

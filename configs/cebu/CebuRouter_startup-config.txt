@@ -1,0 +1,150 @@
+!
+version 15.1
+no service timestamps log datetime msec
+no service timestamps debug datetime msec
+service password-encryption
+!
+hostname CebuRouter
+!
+!
+!
+enable secret 5 $1$mERr$TVaOygN69UQtZWlSTZ9Nw/
+enable password 7 08021F4C1C4B5545464F48
+!
+!
+!
+!
+!
+!
+ip cef
+no ipv6 cef
+!
+!
+!
+!
+license udi pid CISCO2911/K9 sn FTX152404F9-
+license boot module c2900 technology-package securityk9
+!
+!
+!
+crypto isakmp policy 1
+ encr aes 256
+ authentication pre-share
+ group 5
+!
+crypto isakmp policy 2
+ encr aes 256
+ authentication pre-share
+ group 5
+!
+crypto isakmp policy 3
+ encr aes 256
+ authentication pre-share
+ group 5
+!
+crypto isakmp key 1a2b3c4d address 62.62.62.1
+crypto isakmp key 1a2b3c4d address 62.62.62.65
+crypto isakmp key 1a2b3c4d address 62.62.62.97
+!
+!
+!
+crypto ipsec transform-set Manila-Transform-Set esp-aes esp-sha-hmac
+crypto ipsec transform-set Makati-Transform-Set esp-aes esp-sha-hmac
+crypto ipsec transform-set Bohol-Transform-Set esp-aes esp-sha-hmac
+!
+crypto map Manila-VPN-MAP 1 ipsec-isakmp 
+ set peer 62.62.62.1
+ set transform-set Manila-Transform-Set 
+ match address 110
+!
+!
+crypto map Makati-VPN-MAP 2 ipsec-isakmp 
+ set peer 62.62.62.65
+ set transform-set Makati-Transform-Set 
+ match address 111
+!
+!
+crypto map Bohol-VPN-MAP 3 ipsec-isakmp 
+ set peer 62.62.62.97
+ set transform-set Bohol-Transform-Set 
+ match address 112
+!
+!
+!
+!
+!
+!
+spanning-tree mode pvst
+!
+!
+!
+!
+!
+!
+interface GigabitEthernet0/0
+ ip address 172.17.200.50 255.255.255.252
+ ip nat inside
+ duplex auto
+ speed auto
+!
+interface GigabitEthernet0/1
+ ip address 172.17.200.54 255.255.255.252
+ ip nat inside
+ duplex auto
+ speed auto
+!
+interface GigabitEthernet0/2
+ no ip address
+ duplex auto
+ speed auto
+ shutdown
+!
+interface Serial0/3/0
+ ip address 62.62.62.33 255.255.255.224
+ ip nat outside
+ clock rate 2000000
+ crypto map Makati-VPN-MAP
+!
+interface Serial0/3/1
+ no ip address
+ clock rate 2000000
+!
+interface Vlan1
+ no ip address
+ shutdown
+!
+router ospf 1
+ log-adjacency-changes
+ network 172.17.0.0 0.0.255.255 area 0
+ network 192.168.0.0 0.0.255.255 area 0
+ network 62.62.0.0 0.0.255.255 area 0
+!
+ip nat pool cebu 62.62.62.33 62.62.62.62 netmask 255.255.255.224
+ip nat pool manila 62.62.62.33 62.62.62.62 netmask 255.255.255.224
+ip nat inside source list 120 pool cebu overload
+ip classless
+!
+ip flow-export version 9
+!
+!
+access-list 111 permit ip 192.168.4.0 0.0.1.255 192.168.4.0 0.0.2.255
+access-list 112 permit ip 192.168.4.0 0.0.1.255 192.168.9.0 0.0.0.255
+access-list 110 permit ip 192.168.4.0 0.0.1.255 192.168.0.0 0.0.2.255
+access-list 120 permit ip 192.168.4.0 0.0.1.255 142.251.0.0 0.0.255.255
+access-list 120 deny ip any any
+!
+!
+!
+!
+!
+line con 0
+!
+line aux 0
+!
+line vty 0 4
+ login
+!
+!
+!
+end
+
