@@ -2,10 +2,10 @@
 
 A comprehensive network infrastructure design and configuration for a Philippine-based logistics firm, simulated using **Cisco Packet Tracer**. This project implements a redundant Three-Layer Hierarchical Model across four geographic sites: Manila, Cebu, Bohol, and Makati.
 
-## 🏗️ Network Architecture
+## Network Architecture
 The design follows the **Cisco Three-Layer Model** (Core, Distribution, Access) to ensure scalability and high availability.
 
-## 🖼️ Visual Overview
+## Visual Overview
 
 ### Main Topology
 > This view shows the enterprise backbone connecting all four regional offices.
@@ -22,14 +22,14 @@ The design follows the **Cisco Three-Layer Model** (Core, Distribution, Access) 
 * **Dynamic Routing (OSPF):** Configured OSPF Area 0 for automated route propagation across the enterprise backbone.
 * **Security & NAT:** Implemented **PAT (Port Address Translation)** for internet access and standard/extended ACLs for traffic control.
 
-## 🛠️ Tech Stack & Protocols
+## Tech Stack & Protocols
 - **Simulation Tool:** Cisco Packet Tracer
 - **Routing:** OSPF, Static Routing, Inter-VLAN Routing (Router-on-a-Stick/Layer 3 Switching)
 - **Switching:** VTP, VLANs, EtherChannel (LACP/PAgP), STP, HSRP
 - **Security:** IPsec VPN, NAT/PAT, ACLs, Port Security
 - **Services:** DHCP, DNS, HTTP (Web Servers), SMTP
 
-## 📍 Site Overview
+## Site Overview
 | Site | Focus | Key Services |
 | :--- | :--- | :--- |
 | **Manila** | Headquarters | Core Servers (DNS, DHCP, Web, SMTP), HSRP Redundancy |
@@ -37,7 +37,7 @@ The design follows the **Cisco Three-Layer Model** (Core, Distribution, Access) 
 | **Makati** | Sales/InfoSec | High-security InfoSec Team VLAN, VPN to Cebu |
 | **Bohol** | Operations | Maintenance & HR focus, VPN to Manila |
 
-## 🚀 Configuration Highlights
+## Configuration Highlights
 
 ### HSRP — Gateway Redundancy (Manila HQ)
 To ensure the 450+ Engineering users in Manila never lose connectivity, HSRP is configured between `MLA_DIST1` and `MLA_DIST2`. The active router handles traffic while the standby monitors for failure:
@@ -77,7 +77,7 @@ crypto map Cebu-VPN-MAP 1 ipsec-isakmp
 ```
 ACLs (110-112) on each router define which traffic is encrypted and routed through each tunnel.
 
-## 📐 Network Addressing
+## Network Addressing
 The IP scheme uses four address blocks allocated via VLSM:
 
 | Block | Purpose | Example |
@@ -89,7 +89,7 @@ The IP scheme uses four address blocks allocated via VLSM:
 
 Full subnet breakdowns are in [`docs/VLSM.csv`](docs/VLSM.csv) and [`docs/IP Addresses.csv`](docs/IP%20Addresses.csv).
 
-## 📁 Project Structure
+## Project Structure
 ```
 ├── assets/                          # Topology screenshots (PNG)
 ├── configs/                         # Cisco IOS startup-config files
@@ -108,7 +108,7 @@ Full subnet breakdowns are in [`docs/VLSM.csv`](docs/VLSM.csv) and [`docs/IP Add
 ```
 Each site folder contains `core-layer/`, `distribution-layer/`, and `access-layer/` subdirectories with per-device config exports.
 
-## ▶️ Getting Started
+## Getting Started
 1. **Open** `topology/MultiSiteTopology.pkt` in [Cisco Packet Tracer](https://www.netacad.com/courses/packet-tracer) 8.x+
 2. **Switch to Simulation Mode** to trace packets between sites
 3. **Verify connectivity** by pinging between end devices across sites
@@ -123,7 +123,7 @@ show etherchannel summary        # Verify LACP port-channels
 show vlan brief                  # Confirm VLAN assignments
 ```
 
-## 📄 Documentation
+## Documentation
 - [Site Network Configuration Guide](docs/Site%20Network%20Configuration%20Guide.md) — Step-by-step setup procedures for all protocols
 - [VLSM Subnet Planning](docs/VLSM.csv) — Complete subnet allocations across all four sites
 - [IP Address Table](docs/IP%20Addresses.csv) — Device-level IP assignments and interface mappings
